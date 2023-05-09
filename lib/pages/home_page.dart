@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:home_control/components/control_component_class.dart';
 import 'package:home_control/components/control_components.dart';
+import 'package:home_control/routes/routes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -46,11 +47,16 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           Container(
             margin: EdgeInsets.symmetric(horizontal: 15),
-            child: CircleAvatar(
-              backgroundColor: Colors.amber,
-              child: ClipOval(
-                child: Image.network(
-                    'https://previews.123rf.com/images/metelsky/metelsky1809/metelsky180900233/109815470-man-avatar-profile-male-face-icon-vector-illustration.jpg'),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, RouteManager.settingsPage);
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.amber,
+                child: ClipOval(
+                  child: Image.network(
+                      'https://previews.123rf.com/images/metelsky/metelsky1809/metelsky180900233/109815470-man-avatar-profile-male-face-icon-vector-illustration.jpg'),
+                ),
               ),
             ),
           )
